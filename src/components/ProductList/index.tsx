@@ -20,8 +20,6 @@ export default function ProductList({
       )
     : products;
 
-  console.log(sortProducts);
-
   return (
     <div className="flex-1 py-4 ">
       <div className="flex flex-row space-x-2">

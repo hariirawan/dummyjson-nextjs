@@ -12,7 +12,6 @@ async function getCategories(params?: any) {
 
 const Sidebar = async ({ params }: any) => {
   const data: string[] = await getCategories();
-  console.log("params sidebar 1", params);
   return (
     <div className="w-[200px]  mr-2 space-y-2">
       <div className="bg-gray-800 p-2 text-sm">
