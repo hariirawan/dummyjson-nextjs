@@ -1,8 +1,6 @@
-import CardProduct from "@/components/CardProduct";
+import ProductList from "@/components/ProductList";
 import Sidebar from "@/components/Sidebar";
 import { IProduct } from "@/interfaces/IProduct";
-import Image from "next/image";
-import Link from "next/link";
 
 async function getData(params?: any) {
   const res = await fetch(
@@ -27,11 +25,7 @@ export default async function Page({ params }: any) {
   return (
     <main className=" max-w-5xl mx-auto flex flex-row">
       <Sidebar />
-      <div className="flex-1 grid grid-cols-4 gap-4 py-4">
-        {data.products.map((val: IProduct, index: number) => {
-          return <CardProduct key={index} product={val} />;
-        })}
-      </div>
+      <ProductList products={data.products} />
     </main>
   );
 }
