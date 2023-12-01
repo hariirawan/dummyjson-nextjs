@@ -25,7 +25,7 @@ export default async function Page({ params }: any) {
 
   return (
     <main className=" max-w-5xl mx-auto flex flex-row">
-      <Sidebar />
+      <Sidebar params={params} />
       <ProductList products={data.products} params={params} isSort />
     </main>
   );

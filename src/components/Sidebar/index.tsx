@@ -10,9 +10,9 @@ async function getCategories(params?: any) {
   return res.json();
 }
 
-const Sidebar = async () => {
+const Sidebar = async ({ params }: any) => {
   const data: string[] = await getCategories();
-
+  console.log("params sidebar 1", params);
   return (
     <div className="w-[200px]  mr-2 space-y-2">
       <div className="bg-gray-800 p-2 text-sm">
@@ -21,7 +21,12 @@ const Sidebar = async () => {
           {data.map((val, key) => {
             return (
               <Link key={key} href={`/product/${val}`}>
-                <div key={key} className="text-white mb-2">
+                <div
+                  key={key}
+                  className={` mb-2 ${
+                    params?.category == val ? "text-orange-500" : "text-white"
+                  }`}
+                >
                   {val}
                 </div>
               </Link>
