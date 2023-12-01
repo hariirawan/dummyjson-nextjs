@@ -5,7 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 async function getData(params?: any) {
-  const res = await fetch("https://dummyjson.com/products");
+  const res = await fetch(
+    `https://dummyjson.com/products/category/${params?.category}`
+  );
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -14,13 +16,13 @@ async function getData(params?: any) {
   return res.json();
 }
 
-export default async function Home() {
+export default async function Page({ params }: any) {
   const data: {
     products: IProduct[];
     total: number;
     limit: number;
     skip: number;
-  } = await getData();
+  } = await getData(params);
 
   return (
     <main className=" max-w-5xl mx-auto flex flex-row">
