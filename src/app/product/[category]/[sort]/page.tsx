@@ -1,6 +1,7 @@
 import ProductList from "@/components/ProductList";
 import Sidebar from "@/components/Sidebar";
 import { IProduct } from "@/interfaces/IProduct";
+import { pages } from "next/dist/build/templates/app-page";
 
 async function getData(params?: any) {
   const res = await fetch(
@@ -25,7 +26,7 @@ export default async function Page({ params }: any) {
   return (
     <main className=" max-w-5xl mx-auto flex flex-row">
       <Sidebar />
-      <ProductList products={data.products} params={params} />
+      <ProductList products={data.products} params={params} isSort />
     </main>
   );
 }

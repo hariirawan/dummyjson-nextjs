@@ -15,14 +15,6 @@ const Sidebar = async () => {
 
   return (
     <div className="w-[200px]  mr-2 space-y-2">
-      <div className="bg-gray-800 p-2 mt-4 text-sm">
-        <div className="mb-2">Sort By</div>
-        <div className="space-y-2">
-          <div>Ascending</div>
-          <div>Descending</div>
-        </div>
-      </div>
-
       <div className="bg-gray-800 p-2 text-sm">
         <div className="mb-2">Filter By Category</div>
         <div>
